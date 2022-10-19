@@ -1,10 +1,15 @@
 const { MongoExpiredSessionError } = require('mongodb');
 const mongoose = require('mongoose');
+const { MongoClient } = require("mongodb");
+require('dotenv').config();
+const uri = process.env.ATLAS_KEY;
 
-const MONGO_URI = 'mongodb+srv://kcuevas:corkboardwine@cluster0.vd73340.mongodb.net/?retryWrites=true&w=majority'
+const client = new MongoClient(uri);
+
+// const MONGO_URI = 'mongodb+srv://kcuevas:corkboardwine@cluster0.vd73340.mongodb.net/?retryWrites=true&w=majority'
 
 
-mongoose.connect(MONGO_URI, {
+const db = mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: 'corkboard'
@@ -22,9 +27,9 @@ mongoose.connect(MONGO_URI, {
     varietal: String,
     winery_location: String,
     vintage_year: String,
-    price: Mixed,
+    price: String,
     tasting_notes: String
   });
 
   const Wine = mongoose.model('wine', wineSchema);
-  module.exports = { Wine };
+  module.exports = { Wine, db };
