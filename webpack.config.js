@@ -9,7 +9,7 @@ module.exports = {
   },
   mode: process.env.NODE_ENV,
   devServer: {
-    statoc: {
+    static: {
       directory: path.resolve(__dirname, 'build'),
       publicPath: '/'
     },

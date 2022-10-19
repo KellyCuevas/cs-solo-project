@@ -3,7 +3,11 @@ const app = express();
 const path = require('path');
 
 app.use(express.json());
-// app.use(express.static(path.join(__dirname, ))) =>not sure I need this
+
+app.post('/', wineCardController.addWine, (req, res) => {
+  return res.status(200).json(res.body)
+})
+
 if('NODE_ENV=production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on the route '/'
