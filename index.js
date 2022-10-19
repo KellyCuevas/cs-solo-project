@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 
-const uri = 'mongodb+srv://kcuevas:corkboardwine@cluster0.vd73340.mongodb.net/?retryWrites=true&w=majority';
+require('dotenv').config();
+const uri = process.env.ATLAS_KEY;
 //sample file to connect to sample data in db
 const client = new MongoClient(uri);
 async function run() {
