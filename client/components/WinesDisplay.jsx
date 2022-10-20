@@ -18,7 +18,7 @@ class WinesDisplay extends Component {
 
 componentDidMount() {
   console.log('component mounted')
-  fetch('./wines')
+  fetch('./api')
     .then(res => res.json())
     .then((result) => {
       console.log(result.error);
