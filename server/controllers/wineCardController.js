@@ -12,7 +12,7 @@ const wineCardController = {};
 wineCardController.getWine = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({tasting_notes: 'oppulent'});
+    const wineData = await models.Wines.find({});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();

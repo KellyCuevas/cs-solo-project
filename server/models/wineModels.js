@@ -24,7 +24,7 @@ const db = mongoose.connect(uri, {
     varietal: String,
     winery_location: String,
     vintage_year: String,
-    price: String,
+    $price: Number,
     tasting_notes: String
   });
 
