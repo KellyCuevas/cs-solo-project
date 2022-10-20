@@ -11,6 +11,26 @@ app.get('/wines', wineCardController.getWine, (req, res) => {
   return res.status(200).json(res.locals.wineList)
 });
 
+app.get('/wines/red', wineCardController.getWineRed, (req, res) => {
+  console.log('this is get');
+  return res.status(200).json(res.locals.wineList)
+});
+
+app.get('/wines/white', wineCardController.getWineWhite, (req, res) => {
+  console.log('this is get');
+  return res.status(200).json(res.locals.wineList)
+});
+
+app.get('/wines/rose', wineCardController.getWineRose, (req, res) => {
+  console.log('this is get');
+  return res.status(200).json(res.locals.wineList)
+});
+
+app.get('/wines/sparkling', wineCardController.getWineSparkling, (req, res) => {
+  console.log('this is get');
+  return res.status(200).json(res.locals.wineList)
+});
+
 app.post('/', upload.none(), wineCardController.addWine, (req, res) => {
   console.log(req.body);
   return res.status(200).json(res.locals.wine)
