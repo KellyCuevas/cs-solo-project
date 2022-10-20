@@ -2,10 +2,10 @@
  * presentation component that renders a single wine card
  */
 import React from 'react';
-import { markAsUntransferable } from 'worker_threads';
+
 
 const WineCard = props => {
-  const{id, wine} = props;
+  const{key, wine} = props;
   return(
    <div className="wineCard">
     <h3><strong>Name: {wine.name}</strong></h3>

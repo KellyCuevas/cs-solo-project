@@ -4,7 +4,7 @@
  */
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import WinesDisplay from './client/components/WinesDisplay.jsx';
+import WinesDisplay from './WinesDisplay.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class App extends Component {
   render() {
     return(
       <div>
+        <h1>This is WinesDisplay</h1>
         <WinesDisplay/>
       </div>
     );
