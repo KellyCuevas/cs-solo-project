@@ -89,6 +89,22 @@ wineCardController.getWineSparkling = async(req, res, next) => {
    };
 };
 
+wineCardController.getWineUnderTwentyFive = async(req, res, next) => {
+  console.log('this is wineCardController.getWine');
+  try{
+    const wineData = await models.Wines.find({price: {$lt: 25}});
+    console.log('this is wineData' + wineData);
+    res.locals.wineList = wineData;
+    return next();
+  }catch(err) {
+    return next({
+      log: 'error in wineController.getWine',
+      status: 204,
+      message: { err: 'WineList not available' },
+    });
+   };
+};
+
 wineCardController.addWine = async(req, res, next) => {
   // const {name, wine_color, varietal, winery_location, vintage_year, price, tasting_notes} = req.body;
   console.log(req.body.name);

@@ -31,6 +31,11 @@ app.get('/wines/sparkling', wineCardController.getWineSparkling, (req, res) => {
   return res.status(200).json(res.locals.wineList)
 });
 
+app.get('/wines/undertwentyfive', wineCardController.getWineUnderTwentyFive, (req, res) => {
+  console.log('this is get');
+  return res.status(200).json(res.locals.wineList)
+});
+
 app.post('/', upload.none(), wineCardController.addWine, (req, res) => {
   console.log(req.body);
   return res.status(200).json(res.locals.wine)
