@@ -2,10 +2,12 @@
 /**
  * Root component
  */
-import React, { Component } from 'react';
-import {Route, Routes} from 'react-router-dom';
+import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 import { render } from 'react-dom';
-import WinesDisplay from './components/WinesDisplay.jsx';
+import { WinesDisplay } from './components/WinesDisplay.jsx';
+import { NewWine } from './components/NewWine.jsx';
+import { HomePage } from './components/HomePage.jsx';
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
         </li>
       </ul>
     </nav>
-      <Routes>
+  <Routes>
     <Route path='/' element={<HomePage />} />
     <Route path='/wines' element={<WinesDisplay />} />
     <Route path='/addWine' element={<NewWine />} />
@@ -47,4 +49,4 @@ function App() {
 //   }
 // };
 
-export default App;
+export default App

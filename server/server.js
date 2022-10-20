@@ -6,45 +6,45 @@ const multer  = require('multer');
 const upload = multer();
 app.use(express.json());
 
-app.get('api/wines', wineCardController.getWine, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('api/wines', wineCardController.getWine, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines', wineCardController.getWine, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines', wineCardController.getWine, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines/red', wineCardController.getWineRed, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines/red', wineCardController.getWineRed, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines/white', wineCardController.getWineWhite, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines/white', wineCardController.getWineWhite, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines/rose', wineCardController.getWineRose, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines/rose', wineCardController.getWineRose, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines/sparkling', wineCardController.getWineSparkling, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines/sparkling', wineCardController.getWineSparkling, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.get('/wines/undertwentyfive', wineCardController.getWineUnderTwentyFive, (req, res) => {
-  console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
-});
+// app.get('/wines/undertwentyfive', wineCardController.getWineUnderTwentyFive, (req, res) => {
+//   console.log('this is get');
+//   return res.status(200).json(res.locals.wineList)
+// });
 
-app.post('/', upload.none(), wineCardController.addWine, (req, res) => {
-  console.log(req.body);
-  return res.status(200).json(res.locals.wine)
-});
+// app.post('/', upload.none(), wineCardController.addWine, (req, res) => {
+//   console.log(req.body);
+//   return res.status(200).json(res.locals.wine)
+// });
 
 if('NODE_ENV=production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));

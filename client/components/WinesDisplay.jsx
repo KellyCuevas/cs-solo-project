@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import WineCard from './WineCard.jsx';
 
 export function WinesDisplay() {
@@ -78,4 +78,4 @@ export function WinesDisplay() {
 //     </div>
 //   );
 // };
-export default WinesDisplay;
+export default WinesDisplay
