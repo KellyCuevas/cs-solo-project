@@ -1,67 +1,72 @@
 import React from 'react';
 import WineCard from './WineCard.jsx';
+import { Component } from 'react';
 
-export function WinesDisplay() {
-  return <h1>Wine Display</h1>
-}
-
-// class WinesDisplay extends Component {
-//   constructor(props) {
-//     super(props);
-  
-//   this.state = {
-//     error: null,
-//     isLoaded: false,
-//     wineList: [],
-//   };
-
-//   this.addWine = this.addWine.bind(this);
-//   this.deleteWine = this.deleteWine.bind(this);
-//   this.updateWine = this.updateWine.bind(this);
+// export function WinesDisplay() {
+//   return <h2>Wine Display</h2>
 // }
 
-// componentDidMount() {
-//   console.log('component mounted')
-//   fetch('./api')
-//     .then(res => res.json())
-//     .then((result) => {
-//       console.log(result.error);
-//       this.setState({
-//         isLoaded: true,
-//         wineList: result,
-//         error: result.error
-//       });
-//     },
-//   )
-//   .catch((error) => {
-//     console.log('error:', error);
-//   });
+// export function WinesDisplay() {
+//   return <h2>Wine Display</h2>
 // }
+class WinesDisplay extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        error: null,
+        isLoaded: false,
+        wineList: [],
+      };
 
-//   render() {
-//     console.log('component rendering');
-//     const { error, wineList} = this.state;
-//     console.log(error);
-//     const wines = wineList
-//     const getWine = wines
-//     .map((wine, index) =>
-//     <WineCard key={_id} wine={wineList[i]} /> 
-//     );
+      // this.addWine = this.addWine.bind(this);
+      // this.deleteWine = this.deleteWine.bind(this);
+      // this.updateWine = this.updateWine.bind(this);
+    }
 
-//     if(error) {
-//       return (
-//         <div>Error: {error}</div>
-//       );
-//     }
+    componentDidMount() {
+      console.log('component mounted');
+      fetch('/wines')
+        .then(res => res.json())
+        .then((result) => {
+          console.log(result.error);
+          return this.setState({
+            isLoaded: true,
+            wineList: result,
+            error: result.error
+          });
+        })
+        .catch((error) => {
+          console.log('error:', error);
+        });
+    }
 
-//     return(
-//       <div id = "winesDisplay" >
-//         {getWine}
-//       </div>
-//     );
-//   }
-// };
-// export default WinesDisplay;
+    render(){
+      console.log('component rendering');
+      const { error, wineList } = this.state;
+      console.log(error);
+      const wines = wineList;
+      const getWine = wines
+        .map((wine, index) => {
+        return (
+        <WineCard key={index} wine={wine} />
+        );
+        });
+
+      if (error) {
+        return (
+          <div>Error: {error}</div>
+        );
+      }
+
+      return (
+        <div id="wines-display">
+          {getWine}
+        </div>
+      );
+    }
+  };
+
+export default WinesDisplay
 
 // const WinesDisplay = props => {
 //   console.log(props);
@@ -78,4 +83,4 @@ export function WinesDisplay() {
 //     </div>
 //   );
 // };
-export default WinesDisplay
+// export default WinesDisplay

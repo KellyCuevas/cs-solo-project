@@ -5,7 +5,7 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { render } from 'react-dom';
-import { WinesDisplay } from './components/WinesDisplay.jsx';
+import WinesDisplay  from './components/WinesDisplay.jsx';
 import { NewWine } from './components/NewWine.jsx';
 import { HomePage } from './components/HomePage.jsx';
 

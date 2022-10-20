@@ -17,7 +17,7 @@ module.exports = {
     compress: true,
     port: 8080,
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/wines': 'http://localhost:3000',
     },
   },
   plugins: [new HtmlWebpackPlugin({template: '/index.html'})],

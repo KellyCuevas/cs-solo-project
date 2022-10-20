@@ -17,42 +17,89 @@ body {
 //   justify-content: center; 
 //   height: 100px;
 // }
-
+h1, h2 {
+  color: #d8e3f1;
+}
 
 h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 5rem;
   // text-align: center;
-  float: right;
+  // float: right;
   margin-right: 200px;
+  display: inline-block;
 }
 
+h3 {
+  color: $platinum;
+}
+
+.delete-wine {
+  border: 1px, solid, $platinum;
+  border-radius: 5px;
+  background-color: $plum;
+  color: $blush;
+}
 img  {
   height: 200px;
   width: 200px;
   float: left;
+  // display: inline-block;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  text-align: center;
+  background-color: $plum;
+  border: 1px solid $platinum;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+a {
+  color: $blush;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
 }
 
 /* cards container */
-.charContainer {
-  display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-  grid-template-columns: repeat(5, 1fr);
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-flow: row wrap; */
+#wines-display {
+  // background-color: ;
+  // display: grid;
+  // /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  // grid-template-columns: repeat(5, 1fr);
+  display: flex; 
+  flex-direction: row; 
+  flex-flow: row wrap; 
   
 }
 
-.charCard {
-  background-color:white;
-  border: 1px solid rgb(0, 0, 0);
-  margin: 5px;
+.wine-card {
+  background-color:$blush;
+  border: 1px solid $platinum;
+  margin: 25px;
   min-width: 280px;
-  /* flex-basis: 19%; */
+  flex-basis: 20%; 
+  padding: 10px;
+  border-radius: 10px;
+
 }
 
 h2 {
+  text-align: center;
   margin-bottom: 0;
   /* margin-top: 0; */
   font-family: 'Oswald', sans-serif;
@@ -61,7 +108,7 @@ h2 {
 
 @media(max-width: 350px) {
   .charContainer {
-    background: ali;
+    // background: ali;
     display: flex;
     flex-direction: column;
 

@@ -8,14 +8,14 @@ import React from 'react';
 const WineCard = props => {
   const{key, wine} = props;
   return(
-   <div className="wineCard">
-    <h3><strong>Name: {wine.name}</strong></h3>
-    <h3><strong>Name: {wine.wine_color}</strong></h3>
-    <h3><strong>Name: {wine.varietal}</strong></h3>
-    <h3><strong>Name: {wine.winery_location}</strong></h3>
-    <h3><strong>Name: {wine.vintage_year}</strong></h3>
-    <h3><strong>Name: {wine.price}</strong></h3>
-    <h3><strong>Name: {wine.tasting_notes}</strong></h3>
+   <div className="wine-card">
+    <h3 className="card-details"><strong>Name: </strong>{wine.name}</h3>
+    <h3 className="card-details"><strong>Type: </strong>{wine.wine_color}</h3>
+    <h3 className="card-details"><strong>Varietal: </strong>{wine.varietal}</h3>
+    <h3 className="card-details"><strong>Origin: </strong>{wine.winery_location}</h3>
+    <h3 className="card-details"><strong>Vintage Year: </strong>{wine.vintage_year}</h3>
+    <h3 className="card-details"><strong>Price: </strong>{wine.price}</h3>
+    <h3 className="card-details"><strong>Name: </strong>{wine.tasting_notes}</h3>
     <button className = "delete-wine">Delete Wine</button>
   </div>
   );
