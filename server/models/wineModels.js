@@ -6,9 +6,6 @@ const uri = process.env.ATLAS_KEY;
 
 const client = new MongoClient(uri);
 
-// const MONGO_URI = 'mongodb+srv://kcuevas:corkboardwine@cluster0.vd73340.mongodb.net/?retryWrites=true&w=majority'
-
-
 const db = mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -31,5 +28,5 @@ const db = mongoose.connect(uri, {
     tasting_notes: String
   });
 
-  const Wine = mongoose.model('wine', wineSchema);
-  module.exports = { Wine, db };
+  const Wines = mongoose.model('wines', wineSchema);
+  module.exports = { Wines, db };

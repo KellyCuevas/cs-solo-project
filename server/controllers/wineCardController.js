@@ -9,6 +9,22 @@ const wines = database.collection('wines');
 // const db = 'corkboard';
 const wineCardController = {};
 
+wineCardController.getWine = async(req, res, next) => {
+  console.log('this is wineCardController.getWine');
+  try{
+    const wineData = await models.Wines.find({tasting_notes: 'oppulent'});
+    console.log('this is wineData' + wineData);
+    res.locals.wineList = wineData;
+    return next();
+  }catch(err) {
+    return next({
+      log: 'error in wineController.getWine',
+      status: 204,
+      message: { err: 'WineList not available' },
+    });
+   };
+};
+
 wineCardController.addWine = async(req, res, next) => {
   // const {name, wine_color, varietal, winery_location, vintage_year, price, tasting_notes} = req.body;
   console.log(req.body.name);
