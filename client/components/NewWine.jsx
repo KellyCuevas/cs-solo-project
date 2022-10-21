@@ -41,7 +41,7 @@ const NewWine = () => {
             </div>
            
             <div>
-            <label for="wine_color">Select the Wine Type</label>
+            <label>Select the Wine Type</label>
               <select name='wine_color' id='wineColer' value={wine_color} onChange={(e) => setType(e.target.value)}>
                 <option value='red'>Red</option>
                 <option value='white'>White</option>

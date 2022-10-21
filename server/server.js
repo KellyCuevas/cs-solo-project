@@ -36,7 +36,7 @@ app.get('/wines', wineCardController.getWine, (req, res) => {
 //   return res.status(200).json(res.locals.wineList)
 // });
 
-app.post('/addWine', upload.none(), wineCardController.addWine, (req, res) => {
+app.post('/wines', upload.none(), wineCardController.addWine, (req, res) => {
   console.log(req.body);
   return res.status(200).json(res.locals.wine)
 });
