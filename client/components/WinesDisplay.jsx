@@ -1,6 +1,7 @@
 import React from 'react';
 import WineCard from './WineCard.jsx';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 // export function WinesDisplay() {
 //   return <h2>Wine Display</h2>
@@ -59,9 +60,20 @@ class WinesDisplay extends Component {
       }
 
       return (
+        <><nav>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/addWine'>Add New Wine</Link>
+            </li>
+          </ul>
+        </nav>
         <div id="wines-display">
-          {getWine}
+            {getWine}
         </div>
+        </>
       );
     }
   };

@@ -15,7 +15,7 @@ const WineCard = props => {
     <h3 className="card-details"><strong>Origin: </strong>{wine.winery_location}</h3>
     <h3 className="card-details"><strong>Vintage Year: </strong>{wine.vintage_year}</h3>
     <h3 className="card-details"><strong>Price: </strong>{wine.price}</h3>
-    <h3 className="card-details"><strong>Name: </strong>{wine.tasting_notes}</h3>
+    <h3 className="card-details"><strong>Tasting Notes: </strong>{wine.tasting_notes}</h3>
     <button className = "delete-wine">Delete Wine</button>
   </div>
   );

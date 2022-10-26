@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NewWine = () => {
   const [name, setName] = useState('');
@@ -14,6 +15,14 @@ const NewWine = () => {
   const handleSubmit = (e) => {
     console.log('this is handle submit');
     e.preventDefault();
+    // setName('');
+    // setType('');
+    // setVarietal('');
+    // setLocation('');
+    // setYear('');
+    // setPrice('');
+    // setNotes('');
+
     const wine = { name, wine_color, varietal, winery_location, vintage_year, price,  tasting_notes };
 
 
@@ -28,80 +37,86 @@ const NewWine = () => {
   };
   
   return (
-    <div className='addWine'>
-      <h2>Add a New Wine to Your Collection!</h2>
+    <><nav>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/wines'>View Wine List</Link>
+        </li>
+        <li>
+          <Link to='/addWine'>Add New Wine</Link>
+        </li>
+      </ul>
+    </nav><div className='addWine'>
+        <h2>Add a New Wine to Your Collection!</h2>
         <form onSubmit={handleSubmit}>
-            <div>
+          <div>
             <label>Name:</label>
             <input
               type='text'
-              value={name} 
-              onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-           
-            <div>
+              value={name}
+              onChange={(e) => setName(e.target.value)} />
+          </div>
+
+          <div>
             <label>Select the Wine Type</label>
-              <select name='wine_color' id='wineColer' value={wine_color} onChange={(e) => setType(e.target.value)}>
-                <option value='red'>Red</option>
-                <option value='white'>White</option>
-                <option value='rose'>Rosé</option>
-                <option value='sparkling'>Sparkling</option>
-                <option value='other'>Other</option>
-              </select>
-            </div>
-            
-            <div>
-              <label>Varietal:</label>
-              <input
+            <select name='wine_color' id='wineColer' value={wine_color} onChange={(e) => setType(e.target.value)}>
+              <option value='red'>Red</option>
+              <option value='white'>White</option>
+              <option value='rose'>Rosé</option>
+              <option value='sparkling'>Sparkling</option>
+              <option value='other'>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Varietal:</label>
+            <input
               type='text'
-              value={varietal} 
-              onChange={(e) => setVarietal(e.target.value)}
-              />
-            </div>
-             
-            <div>
+              value={varietal}
+              onChange={(e) => setVarietal(e.target.value)} />
+          </div>
+
+          <div>
             <label> Origin:</label>
             <input
               type='text'
-              value={winery_location} 
-              onChange={(e) => setLocation(e.target.value)}
-              />
-            </div>
-            
-            <div>
-            <label>Year:</label> 
+              value={winery_location}
+              onChange={(e) => setLocation(e.target.value)} />
+          </div>
+
+          <div>
+            <label>Year:</label>
             <input
               type='text'
-              value={vintage_year} 
-              onChange={(e) => setYear(e.target.value)}
-              />
-            </div>
-              
-            <div>
+              value={vintage_year}
+              onChange={(e) => setYear(e.target.value)} />
+          </div>
+
+          <div>
             <label>Price:</label>
             <input
               type='text'
-              value={price} 
-              onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-           
-            <div>
-              <label> Tasting Notes:</label>
-              <input
+              value={price}
+              onChange={(e) => setPrice(e.target.value)} />
+          </div>
+
+          <div>
+            <label> Tasting Notes:</label>
+            <input
               type='text'
-              value={tasting_notes} 
-              onChange={(e) => setNotes(e.target.value)}
-              />
-            </div>
-              
-           <div>
-           <button type="button" className="submit" onClick={NewWine}>Save</button> 
-           </div>
-              
-    </form>
-  </div>
+              value={tasting_notes}
+              onChange={(e) => setNotes(e.target.value)} />
+          </div>
+
+          <div>
+            <button type="button" className="submit" onClick={NewWine}>Save</button>
+          </div>
+
+        </form>
+      </div></>
     )
   }
 

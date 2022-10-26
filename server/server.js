@@ -6,6 +6,8 @@ const multer  = require('multer');
 const upload = multer();
 app.use(express.json());
 
+// const PORT = 3000;
+
 app.get('/wines', wineCardController.getWine, (req, res) => {
   console.log('this is get');
   return res.status(200).json(res.locals.wineList)
@@ -68,3 +70,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000);
+
+// app.listen(PORT, () => {
+//   console.log(`Server listening on port: ${PORT}...`);
+// });

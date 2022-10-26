@@ -11,18 +11,23 @@ const wineCardController = {};
 
 wineCardController.addWine = async(req, res, next) => {
   // const {name, wine_color, varietal, winery_location, vintage_year, price, tasting_notes} = req.body;
-  console.log(req.body.name);
+  console.log(req.body.name, req.body.wine_color);
+  const {name, wine_color, varietal, winery_location, vintage_year, price, tasting_notes} = req.body;
  try{
   const newWineEntry = {
-  name: req.body.name,
-  wine_color: req.body.wine_color,
-  varietal: req.body.varietal,
-  winery_location: req.body.winery_location,
-  vintage_year: req.body.vintage_year,
-  price: req.body.price,
-  tasting_notes: req.body.tasting_notes
- } 
- const newWine = await wines.insertOne(newWineEntry);
+  name: name,
+  wine_color: wine_color,
+  varietal: varietal,
+  winery_location: winery_location,
+  vintage_year: vintage_year,
+  price: price,
+  tasting_notes: tasting_notes
+ }
+ 
+ console.log(newWineEntry);
+ console.log(wines);
+ const newWine = await wines.save(newWineEntry);
+ console.log(newWine);
   res.locals.wine = newWine; 
   return next();
  }catch(err) {
@@ -33,8 +38,11 @@ wineCardController.addWine = async(req, res, next) => {
 wineCardController.getWine = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({});
+    const wineData = await wines.find({});
+    console.log(req);
+    console.log(req.body);
     console.log('this is wineData' + wineData);
+    console.log(wineData);
     res.locals.wineList = wineData;
     return next();
   }catch(err) {
@@ -49,7 +57,7 @@ wineCardController.getWine = async(req, res, next) => {
 wineCardController.getWineRed = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({wine_color: ['red', 'Red']});
+    const wineData = await wines.find({wine_color: ['red', 'Red']});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();
@@ -65,7 +73,7 @@ wineCardController.getWineRed = async(req, res, next) => {
 wineCardController.getWineWhite = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({wine_color: ['white', 'White']});
+    const wineData = await wines.find({wine_color: ['white', 'White']});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();
@@ -81,7 +89,7 @@ wineCardController.getWineWhite = async(req, res, next) => {
 wineCardController.getWineRose = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({wine_color: ['rose', 'Rose', 'pink', 'Pink']});
+    const wineData = await wines.find({wine_color: ['rose', 'Rose', 'pink', 'Pink']});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();
@@ -97,7 +105,7 @@ wineCardController.getWineRose = async(req, res, next) => {
 wineCardController.getWineSparkling = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({wine_color: ['sparkling', 'Sparkling', 'champagne', 'Champagne']});
+    const wineData = await wines.find({wine_color: ['sparkling', 'Sparkling', 'champagne', 'Champagne']});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();
@@ -113,7 +121,7 @@ wineCardController.getWineSparkling = async(req, res, next) => {
 wineCardController.getWineUnderTwentyFive = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
-    const wineData = await models.Wines.find({price: {$lt: 25}});
+    const wineData = await wines.find({price: {$lt: 25}});
     console.log('this is wineData' + wineData);
     res.locals.wineList = wineData;
     return next();
