@@ -66,7 +66,7 @@ class WinesDisplay extends Component {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/addWine'>Add New Wine</Link>
+              <Link to='addWine'>Add New Wine</Link>
             </li>
           </ul>
         </nav>

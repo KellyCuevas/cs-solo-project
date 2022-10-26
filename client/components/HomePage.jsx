@@ -6,7 +6,7 @@ import  HomePage  from './components/HomePage';
 
 const HomePage = () => {
   return(
-    <>
+    <section>
     <h2>Welcome! What Would You Like to Do?</h2>
     <nav>
       <ul>
@@ -18,7 +18,7 @@ const HomePage = () => {
         </li>
       </ul>
     </nav>
-    </>
+    </section>
   ) 
 }
 
