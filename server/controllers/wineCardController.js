@@ -39,10 +39,8 @@ wineCardController.getWine = async(req, res, next) => {
   console.log('this is wineCardController.getWine');
   try{
     const wineData = await wines.find({});
-    console.log(req);
-    console.log(req.body);
+  
     console.log('this is wineData' + wineData);
-    console.log(wineData);
     res.locals.wineList = wineData;
     return next();
   }catch(err) {

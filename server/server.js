@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.get('/wines', wineCardController.getWine, (req, res) => {
   console.log('this is get');
-  return res.status(200).json(res.locals.wineList)
+  return res.status(200).send({wineList})
 });
 
 // app.get('/wines/red', wineCardController.getWineRed, (req, res) => {

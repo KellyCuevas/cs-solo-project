@@ -66,7 +66,7 @@ class WinesDisplay extends Component {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/addWine'>Add New Wine</Link>
+              <Link to='addWine'>Add New Wine</Link>
             </li>
           </ul>
         </nav>
@@ -78,7 +78,6 @@ class WinesDisplay extends Component {
     }
   };
 
-export default WinesDisplay
 
 // const WinesDisplay = props => {
 //   console.log(props);
@@ -95,4 +94,4 @@ export default WinesDisplay
 //     </div>
 //   );
 // };
-// export default WinesDisplay
+export default WinesDisplay;

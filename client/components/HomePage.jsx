@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import WinesDisplay  from './components/WinesDisplay';
-import  NewWine  from './components/NewWine';
-import  HomePage  from './components/HomePage';
+import WinesDisplay  from './components/WinesDisplay.jsx';
+import  NewWine  from './components/NewWine.jsx';
+
 
 const HomePage = () => {
   return(
-    <>
+    <section>
     <h2>Welcome! What Would You Like to Do?</h2>
     <nav>
       <ul>
@@ -18,7 +18,7 @@ const HomePage = () => {
         </li>
       </ul>
     </nav>
-    </>
+    </section>
   ) 
 }
 

@@ -1,9 +1,14 @@
-
+import { Link } from 'react-router-dom';
 
 const Error = () => {
   return (
-    <h1>Oops! The page you were looking for can't be found...</h1>
-  )
+    <section>
+    <h2>404</h2>
+    <p>Page Not Found</p>
+    <Link to='/'>Back Home</Link>
+    </section>
+    
+  );
 }
 
-export default Error
+export default Error;
